@@ -80,28 +80,28 @@
 <body>
   <h1>2048</h1>
   <div class="header">
-    <div class="score-box">Skor<br><strong id="score">0</strong></div>
-    <div class="score-box">Tertinggi<br><strong id="high-score">0</strong></div>
+    <div class="score-box">Score<br><strong id="score">0</strong></div>
+    <div class="score-box">Highest<br><strong id="high-score">0</strong></div>
     <button class="btn-text" onclick="connectWallet()">🔗 Wallet</button>
-    <button class="btn-text" onclick="openModal('rules')">📜 Aturan</button>
+    <button class="btn-text" onclick="openModal('rules')">📜 Rules</button>
   </div>
 
   <div id="game-container">
     <div id="start-screen">
       <h2>2048 - Base Game</h2>
-      <p class="instructions">Gabungkan angka hingga mencapai <strong>2048</strong></p>
+      <p class="instructions">Combine the numbers until you reach <strong>2048</strong></p>
       <button onclick="startGameWithFee()" class="btn-primary">▶️ Play (On chain)</button><br>
       <button onclick="startDemoMode()" class="btn-secondary" style="margin-top:10px;">🎮 Demo Mode (Free)</button>
-      <p class="instructions">⌨️ Gunakan ↑↓←→ atau geser layar</p>
+      <p class="instructions">⌨️ Use ↑↓←→ or swipe the screen</p>
     </div>
 
     <div id="game-ui">
-      <div id="demo-badge">🧪 Demo Mode Aktif</div>
+      <div id="demo-badge">🧪 Demo Mode Active</div>
             <div id="farming-wrap">
         <div id="farming-toggle" class="toggle-switch" onclick="toggleFarming()"></div>
-        <label for="farming-toggle" style="cursor:pointer; font-size:0.9rem;">🔄 Farming Mode (Tx Tiap Gerakan)</label>
+        <label for="farming-toggle" style="cursor:pointer; font-size:0.9rem;">🔄 Onchain Mode </label>
       </div>
-      <div id="tx-status">⏳ Menunggu konfirmasi wallet...</div>
+      <div id="tx-status">⏳ Waiting wallet confirmation...</div>
 
       <div id="game-board">
         <div class="cell" id="c0"></div><div class="cell" id="c1"></div><div class="cell" id="c2"></div><div class="cell" id="c3"></div>
@@ -110,11 +110,11 @@
         <div class="cell" id="c12"></div><div class="cell" id="c13"></div><div class="cell" id="c14"></div><div class="cell" id="c15"></div>
       </div>
       
-      <button onclick="restartGame()" class="btn-primary">🔄 Main Lagi</button>
+      <button onclick="restartGame()" class="btn-primary">🔄 Play again</button>
       <button onclick="exitGame()" class="btn-secondary">🚪 Menu</button>
       <div id="game-over">
         <h3>🎮 Game Over!</h3>
-        <p>Skor Akhir: <strong id="final-score">0</strong></p>
+        <p>Last score: <strong id="final-score">0</strong></p>
         <button onclick="restartGame()" class="btn-primary" style="margin-top:10px;">▶️ Coba Lagi</button>
       </div>
     </div>
@@ -122,13 +122,13 @@
 
   <div id="rules-modal" class="modal">
     <div class="modal-content">
-      <h3>📜 Peraturan & Biaya</h3>
+      <h3>📜 Rules</h3>
       <ul style="margin: 10px 0 15px 20px; line-height: 1.6;">
         <li>Fee start play/restart: <strong>0.00003 ETH</strong> (fixed)</li>
-        <li><strong>Farming Mode:</strong> Play and push your tx on base <em>gas fee Base</em> (~$0.00001)</li>
-        <li>Leaderboard diupdate off-chain setiap 24 jam</li>
+        <li><strong>Onchain Mode:</strong> Play and push your score on base <em>gas fee Base</em> (~$0.00001)</li>
+        <li>Leaderboard updated off-chain </li>
       </ul>
-      <button onclick="closeModal()" class="btn-secondary">Tutup</button>
+      <button onclick="closeModal()" class="btn-secondary">Close</button>
     </div>
   </div>
 
